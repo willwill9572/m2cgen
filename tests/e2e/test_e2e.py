@@ -4,6 +4,7 @@ import pytest
 import numpy as np
 import xgboost
 import statsmodels.api as sm
+import lightning
 from sklearn import linear_model, svm
 from sklearn import tree
 from sklearn import ensemble
@@ -249,6 +250,17 @@ STATSMODELS_LINEAR_REGULARIZED_PARAMS = dict(method="elastic_net",
             dict(init=dict(fit_intercept=True, weights=np.arange(
                 len(utils.get_regression_model_trainer().y_train))),
                  fit_regularized=STATSMODELS_LINEAR_REGULARIZED_PARAMS))),
+
+        # lightning Linear Regression
+        regression(lightning.regression.AdaGradRegressor(random_state=RANDOM_SEED)),
+        regression(lightning.regression.CDRegressor(random_state=RANDOM_SEE)),
+        regression(lightning.regression.FistaRegressor()),
+        regression(lightning.regression.LinearSVR(random_state=RANDOM_SEED)),
+        regression(lightning.regression.SAGRegressor(random_state=RANDOM_SEED)),
+        regression(lightning.regression.SAGARegressor(random_state=RANDOM_SEED)),
+        regression(lightning.regression.SDCARegressor(random_state=RANDOM_SEED)),
+        regression(lightning.regression.SGDRegressor(random_state=RANDOM_SEED)),
+        regression(lightning.regression.SVRGRegressor(random_state=RANDOM_SEED)),
 
         # Linear Classifiers
         classification(linear_model.LogisticRegression(

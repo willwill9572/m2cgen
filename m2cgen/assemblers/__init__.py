@@ -69,7 +69,25 @@ SUPPORTED_MODELS = {
     "RegressionResultsWrapper": StatsmodelsLinearModelAssembler,
     "RegularizedResultsWrapper": StatsmodelsLinearModelAssembler,
 
-    # Linear Classifiers
+    # lightning Linear Regressors
+    "AdaGradRegressor": SklearnLinearModelAssembler,
+    "CDRegressor": SklearnLinearModelAssembler,
+    "FistaRegressor": SklearnLinearModelAssembler,
+    "SAGRegressor": SklearnLinearModelAssembler,
+    "SAGARegressor": SklearnLinearModelAssembler,
+    "SDCARegressor": SklearnLinearModelAssembler,
+    "SVRGRegressor": SklearnLinearModelAssembler,
+
+    # Sklearn Linear Classifiers
+    "LogisticRegression": SklearnLinearModelAssembler,
+    "LogisticRegressionCV": SklearnLinearModelAssembler,
+    "PassiveAggressiveClassifier": SklearnLinearModelAssembler,
+    "Perceptron": SklearnLinearModelAssembler,
+    "RidgeClassifier": SklearnLinearModelAssembler,
+    "RidgeClassifierCV": SklearnLinearModelAssembler,
+    "SGDClassifier": SklearnLinearModelAssembler,
+
+    # lightning Linear Classifiers
     "LogisticRegression": SklearnLinearModelAssembler,
     "LogisticRegressionCV": SklearnLinearModelAssembler,
     "PassiveAggressiveClassifier": SklearnLinearModelAssembler,
